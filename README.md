@@ -22,16 +22,15 @@ I’ll then wrap up the blog post discussing how you can apply face detection to
 	- le.pickle : Our label encoder. Contains the name labels for the people that our model can recognize.
 	- recognizer.pickle : Our Linear Support Vector Machine (SVM) model. This is a machine learning model rather than a deep learning model and it is responsible for actually recognizing faces.
 
-######*************************************************Extract embedding*******************************
+*************************************************Extract embedding*******************************
 python extract_embeddings.py --dataset dataset --embeddings output/embeddings.pickle --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7
 
-######************************************************Training the model*****************************
+************************************************Training the model*****************************
 python train_model.py --embeddings output/embeddings.pickle --recognizer output/recognizer.pickle --le output/le.pickle
 
-######************************************************Recognize faces with opencv*********************
-python recognize.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle \
---image images/kiran.jpg
+************************************************Recognize faces with opencv*********************
+python recognize.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle --image images/kiran.jpg
 	
-######***********************************************Recognize faces with opencv in video stream********************
+***********************************************Recognize faces with opencv in video stream********************
 python recognize_video.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle
  
