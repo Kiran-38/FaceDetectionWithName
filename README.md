@@ -9,7 +9,7 @@ From there I’ll demonstrate how you can perform face detection in images using
 I’ll then wrap up the blog post discussing how you can apply face detection to video streams using OpenCV and deep learning as well.
 
 
-###### Our project has four directories in the root folder:
+###### **Our project has four directories in the root folder**:
 
 1. dataset/ : Contains our face images organized into subfolders by name.
 
